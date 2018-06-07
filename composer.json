@@ -1,0 +1,50 @@
+{
+    "name": "marioblazek/twig-byte-units-extension",
+    "description": "Twig filters that format output of units of information by using ByteUnits library by Gabriele Lana",
+    "keywords": [
+        "templating",
+        "twig",
+        "package",
+        "byte",
+        "units of information",
+        "symfony"
+    ],
+    "homepage": "https://github.com/marioblazek/twig-byte-units-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mario Blažek",
+            "email": "blazek.mario@gmail.com",
+            "homepage": "https://marioblazek.github.io/"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "gabrielelana/byte-units": "^0.5",
+        "twig/twig": "^1.35.2 || ^2.4.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Marek\\Twig\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Marek\\Twig\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "@php vendor/bin/phpunit --colors=always"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.0-dev"
+        }
+    }
+}
