@@ -1,7 +1,7 @@
 Byte Units Twig extension
 =========================
 
-[![Build Status](https://travis-ci.org/MarioBlazek/twig-byte-units-extension.svg?branch=master](https://travis-ci.org/MarioBlazek/twig-byte-units-extension)
+[![Build Status](https://travis-ci.org/MarioBlazek/twig-byte-units-extension.svg?branch=master)](https://travis-ci.org/MarioBlazek/twig-byte-units-extension)
 [![Code Coverage](https://img.shields.io/codecov/c/github/MarioBlazek/twig-byte-units-extension.svg?style=flat-square)](https://codecov.io/gh/MarioBlazek/twig-byte-units-extension)
 [![Downloads](https://img.shields.io/packagist/dt/marioblazek/twig-byte-units-extension.svg?style=flat-square)](https://packagist.org/packages/marioblazek/twig-byte-units-extension/stats)
 [![Latest stable](https://img.shields.io/packagist/v/marioblazek/twig-byte-units-extension.svg?style=flat-square)](https://packagist.org/packages/marioblazek/twig-byte-units-extension)
@@ -36,7 +36,7 @@ services:
             - { name: twig.extension }
 ```
 
-Once set up, you can use the following Twig functions:
+Once set up, you can use the following Twig filters:
 
 * `1322000|byte_units_format_metric('MB')` - Returns value formated in MB as returned by `ByteUnits\Metric::format` method
 * `1322000|byte_units_format_binary('MB')` - Returns value formated in MiB as returned by `ByteUnits\Binary::format` method
