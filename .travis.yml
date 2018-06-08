@@ -1,18 +1,21 @@
 language: php
 
 php:
-  - 7.1
-  - 7.2
+    - 7.1
+    - 7.2
 
 branches:
-  only:
-    - master
+    only:
+        - master
 
 install:
-  - composer install
+    - composer install
 
 script:
-  - composer test
+    - composer test
 
 notifications:
-  email: false
+    email: false
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
