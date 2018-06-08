@@ -1,7 +1,7 @@
 Byte Units Twig extension
 =========================
 
-[![Build Status](https://travis-ci.org/MarioBlazek/twig-byte-units-extension.svg?branch=master)](https://travis-ci.org/MarioBlazek/twig-byte-units-extension)
+[![Build Status](https://img.shields.io/travis/MarioBlazek/twig-byte-units-extension.svg?style=flat-square)](https://travis-ci.org/MarioBlazek/twig-byte-units-extension)
 [![Code Coverage](https://img.shields.io/codecov/c/github/MarioBlazek/twig-byte-units-extension.svg?style=flat-square)](https://codecov.io/gh/MarioBlazek/twig-byte-units-extension)
 [![Downloads](https://img.shields.io/packagist/dt/marioblazek/twig-byte-units-extension.svg?style=flat-square)](https://packagist.org/packages/marioblazek/twig-byte-units-extension/stats)
 [![Latest stable](https://img.shields.io/packagist/v/marioblazek/twig-byte-units-extension.svg?style=flat-square)](https://packagist.org/packages/marioblazek/twig-byte-units-extension)
