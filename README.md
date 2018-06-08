@@ -30,7 +30,7 @@ In a Symfony project, you can register the extension as a service:
 
 ```yaml
 services:
-    twig.extension.version:
+    twig.extension.byte_units:
         class: Marek\Twig\ByteUnitsExtension
         tags:
             - { name: twig.extension }
