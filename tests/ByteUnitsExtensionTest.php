@@ -6,6 +6,7 @@ namespace Marek\Twig\Tests;
 
 use Marek\Twig\ByteUnitsExtension;
 use PHPUnit\Framework\TestCase;
+use Twig\TwigFilter;
 
 final class ByteUnitsExtensionTest extends TestCase
 {
@@ -19,6 +20,20 @@ final class ByteUnitsExtensionTest extends TestCase
         $this->extension = new ByteUnitsExtension();
     }
 
+    /**
+     * @covers \Marek\Twig\ByteUnitsExtension::getFilters()
+     */
+    public function testGetFilters()
+    {
+        $filters = $this->extension->getFilters();
+        foreach ($filters as $filter) {
+            $this->assertInstanceOf(TwigFilter::class, $filter);
+        }
+    }
+
+    /**
+     * @covers \Marek\Twig\ByteUnitsExtension::getFormatedMetricValue()
+     */
     public function testGetFormatedMetricValue()
     {
         $this->assertEquals(
@@ -42,6 +57,9 @@ final class ByteUnitsExtensionTest extends TestCase
         );
     }
 
+    /**
+     * @covers \Marek\Twig\ByteUnitsExtension::getMetricBytes()
+     */
     public function testGetMetricBytes()
     {
         $this->assertEquals(
@@ -50,6 +68,9 @@ final class ByteUnitsExtensionTest extends TestCase
         );
     }
 
+    /**
+     * @covers \Marek\Twig\ByteUnitsExtension::getFormatedBinaryValue()
+     */
     public function testGetFormatedBinaryValue()
     {
         $this->assertEquals(
@@ -68,6 +89,9 @@ final class ByteUnitsExtensionTest extends TestCase
         );
     }
 
+    /**
+     * @covers \Marek\Twig\ByteUnitsExtension::getBinaryBytes()
+     */
     public function testGetBinaryBytes()
     {
         $this->assertEquals(
