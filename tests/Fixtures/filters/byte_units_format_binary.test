@@ -1,0 +1,14 @@
+--TEST--
+"byte_units_format_metric" filter
+--TEMPLATE--
+{{ 1322000|byte_units_format_metric("MB") }}
+{{ 1322000|byte_units_format_metric }}
+{{ 1322000|byte_units_format_metric("MB", 2, ' ') }}
+{{ 1322000|byte_units_format_metric("MB", 2, '/') }}
+--DATA--
+return array()
+--EXPECT--
+1.32MB
+1.32MB
+1.32 MB
+1.32/MB

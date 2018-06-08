@@ -33,28 +33,28 @@ class ByteUnitsExtension extends AbstractExtension
         ];
     }
 
-    public function getFormatedMetricValue(int $value, string $format = null, $precision = Metric::DEFAULT_FORMAT_PRECISION, $separator = ''): string
+    public function getFormatedMetricValue(int $value, string $format = null, int $precision = Metric::DEFAULT_FORMAT_PRECISION, string $separator = ''): string
     {
         $metric = new Metric($value, $precision);
 
         return $metric->format($format, $separator);
     }
 
-    public function getMetricBytes(int $value, $precision = Metric::DEFAULT_FORMAT_PRECISION)
+    public function getMetricBytes(int $value, int $precision = Metric::DEFAULT_FORMAT_PRECISION): string
     {
         $binary = new Metric($value, $precision);
 
         return $binary->numberOfBytes();
     }
 
-    public function getFormatedBinaryValue(int $value, string $format = null, $precision = Metric::DEFAULT_FORMAT_PRECISION, $separator = ''): string
+    public function getFormatedBinaryValue(int $value, string $format = null, int $precision = Metric::DEFAULT_FORMAT_PRECISION, string $separator = ''): string
     {
         $binary = new Binary($value, $precision);
 
         return $binary->format($format, $separator);
     }
 
-    public function getBinaryBytes(int $value, $precision = Metric::DEFAULT_FORMAT_PRECISION)
+    public function getBinaryBytes(int $value, int $precision = Metric::DEFAULT_FORMAT_PRECISION): string
     {
         $binary = new Binary($value, $precision);
 

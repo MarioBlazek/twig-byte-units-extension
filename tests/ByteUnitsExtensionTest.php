@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Marek\Twig\Tests;
+
 use Marek\Twig\ByteUnitsExtension;
 use PHPUnit\Framework\TestCase;
 
@@ -22,6 +24,11 @@ final class ByteUnitsExtensionTest extends TestCase
         $this->assertEquals(
             '1.32MB',
             $this->extension->getFormatedMetricValue(1322000, 'MB')
+        );
+
+        $this->assertEquals(
+            '1.32MB',
+            $this->extension->getFormatedMetricValue(1322000)
         );
 
         $this->assertEquals(

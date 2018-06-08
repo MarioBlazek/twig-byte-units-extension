@@ -1,0 +1,8 @@
+--TEST--
+"byte_units_bytes_metric" filter
+--TEMPLATE--
+{{ 1322000|byte_units_bytes_metric }}
+--DATA--
+return array()
+--EXPECT--
+1322000
