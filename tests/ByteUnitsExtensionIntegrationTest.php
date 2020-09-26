@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Marek\Twig\Tests;
 
 use Marek\Twig\ByteUnitsExtension;
-use Twig_Test_IntegrationTestCase;
+use Twig\Test\IntegrationTestCase;
 
-class ByteUnitsExtensionIntegrationTest extends Twig_Test_IntegrationTestCase
+class ByteUnitsExtensionIntegrationTest extends IntegrationTestCase
 {
     protected function getFixturesDir()
     {
