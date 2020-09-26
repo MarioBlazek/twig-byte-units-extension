@@ -1,22 +1,45 @@
+dist: xenial
+
 language: php
+
 
 php:
     - 7.2
     - 7.3
     - 7.4
 
+cache:
+    directories:
+        - $HOME/.cache/composer
+
+env:
+    - PHPUNIT_CONFIG="phpunit.xml.dist"
+
+matrix:
+    include:
+        - php: 7.3
+          env: RUN_COVERAGE="yes"
+
 branches:
     only:
         - master
 
-install:
-    - composer install
+before_script:
+    - phpenv config-rm xdebug.ini || true
+    - echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+    - composer update --no-suggest --prefer-dist
 
 script:
-    - composer test
+    - composer validate --strict
+    - if [ "$PHPUNIT_CONFIG" != "" ] ; then vendor/bin/phpunit -c $PHPUNIT_CONFIG --colors=always ; fi
+    - |
+      if [ "$RUN_COVERAGE" != "" ] ; then
+          php -dzend_extension=xdebug.so vendor/bin/phpunit --coverage-clover=coverage.xml --colors=always
+          bash <(curl -s https://codecov.io/bash) || echo "Error while collecting coverage reports"
+      fi
 
 notifications:
     email: false
 
-after_success:
-    - cd build/logs && bash <(curl -s https://codecov.io/bash)
+git:
+    depth: 1
